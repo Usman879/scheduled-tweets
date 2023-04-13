@@ -8,7 +8,7 @@ class RegistrationsController < ApplicationController
       session[:user_id] = @user.id
         redirect_to root_path, notice: "Successfully created the Account"
     else
-        redirect_to sign_up_path
+        render :new, status: 422
     end
   end
 
