@@ -22,6 +22,9 @@ class TweetsController < ApplicationController
   def edit
   end
 
+  def show
+  end
+
   def update
     if @tweet.update(tweet_params)
       redirect_to tweets_path, notice: "Tweet was updated Successfully"
@@ -33,7 +36,7 @@ class TweetsController < ApplicationController
 
   def destroy
     @tweet.destroy
-    redirect_to tweets_path, alert: "Tweet was unscheduled" 
+    redirect_to tweets_path, notice: "Tweet was unscheduled" 
   end
 
   private
